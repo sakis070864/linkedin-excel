@@ -1,0 +1,5 @@
+{
+  "name": "Excel Intelligence Dashboard",
+  "description": "A premium enterprise React dashboard that manages Excel financial data via Microsoft Graph API without opening Excel.",
+  "requestFramePermissions": []
+}
