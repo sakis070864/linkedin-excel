@@ -1,25 +1,21 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  
-  // Ορισμός process.env για συμβατότητα με βιβλιοθήκες
-  define: {
-    'process.env': {} 
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./index.tsx",
+    "./App.tsx",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          50: '#f0f9ff',
+          500: '#0ea5e9',
+          700: '#0369a1',
+        }
+      }
+    },
   },
-
-  server: {
-    port: 8080,      // Χρησιμοποιούμε την 8080 για να μην κολλάει με το άλλο app
-    strictPort: true, 
-    host: '127.0.0.1', 
-  },
-
-  // Αφαιρέσαμε τα external για να φορτώνουν όλα από το node_modules σου
-  build: {
-    rollupOptions: {
-      external: [] 
-    }
-  }
-});
+  plugins: [],
+}
